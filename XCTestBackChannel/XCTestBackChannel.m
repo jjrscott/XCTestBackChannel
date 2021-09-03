@@ -16,8 +16,8 @@
 
 @interface XCTestBackChannel ()
 
-@property(nonatomic, strong) NSString *testBackchannelAppIdentifier;
-@property(nonatomic, strong) NSString *testBackchannelRunnerIdentifier;
+@property(nonatomic, strong) NSString *localIdentifier;
+@property(nonatomic, strong) NSString *remoteIdentifier;
 
 @end
 
@@ -37,8 +37,8 @@
 {
     self = [super init];
     if (self) {
-        self.testBackchannelRunnerIdentifier = NSUUID.UUID.UUIDString;
-        self.testBackchannelAppIdentifier = NSUUID.UUID.UUIDString;
+        self.localIdentifier = NSProcessInfo.processInfo.environment[UITestBackchannelAppIdentifier] ?: NSUUID.UUID.UUIDString;
+        self.remoteIdentifier = NSProcessInfo.processInfo.environment[UITestBackchannelRunnerIdentifier] ?: NSUUID.UUID.UUIDString;
     }
     return self;
 }
@@ -54,23 +54,14 @@
 
 - (void)registerWithApplication:(XCTestBackChannelUIApplication*)application {
     NSMutableDictionary *launchEnvironment = [NSMutableDictionary dictionaryWithDictionary:application.launchEnvironment];
-    launchEnvironment[UITestBackchannelAppIdentifier] = self.testBackchannelAppIdentifier;
-    launchEnvironment[UITestBackchannelRunnerIdentifier] = self.testBackchannelRunnerIdentifier;
+    launchEnvironment[UITestBackchannelAppIdentifier] = self.remoteIdentifier;
+    launchEnvironment[UITestBackchannelRunnerIdentifier] = self.localIdentifier;
     application.launchEnvironment = launchEnvironment;
 }
 
 - (void)handleNotification:(NSNotification*)notification {
     [self.delegate XCTestBackChannelHandleMessage:notification.object];
 }
-
--(NSString*)localIdentifier {
-    return NSProcessInfo.processInfo.environment[UITestBackchannelAppIdentifier] ?: self.testBackchannelRunnerIdentifier;
-}
-
--(NSString*)remoteIdentifier {
-    return NSProcessInfo.processInfo.environment[UITestBackchannelRunnerIdentifier] ?: self.testBackchannelAppIdentifier;
-}
-
 
 -(void)setDelegate:(id<XCTestBackChannelDelegate>)delegate {
     if (_delegate) {
