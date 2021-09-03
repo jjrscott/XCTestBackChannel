@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, XCTestBackChannelDelegate
         // Override point for customization after application launch.
         XCTestBackChannel.shared.delegate = self
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { (_) in
-            XCTestBackChannel.shared.sentMessage("Hello")
+            XCTestBackChannel.shared.sendMessage("Hello")
         }
         return true
     }

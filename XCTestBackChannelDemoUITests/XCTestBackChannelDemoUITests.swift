@@ -38,7 +38,7 @@ class XCTestBackChannelDemoUITests: XCTestCase, XCTestBackChannelDelegate {
             wait(for: [expectation], timeout: 10)
         }
         
-        XCTestBackChannel.shared.sentMessage("DebugColor")
+        XCTestBackChannel.shared.sendMessage("DebugColor")
         sleep(5)
 
         // Use recording to get started writing UI tests.

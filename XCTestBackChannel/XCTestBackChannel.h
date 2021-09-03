@@ -27,7 +27,7 @@ FOUNDATION_EXPORT const unsigned char XCTestBackChannelVersionString[];
 
 @property (nonatomic, class, nonnull, readonly) XCTestBackChannel *sharedBackChannel;
 
--(void)sentMessage:(NSString* _Nonnull)message;
+-(void)sendMessage:(NSString* _Nonnull)message;
 
 -(void)registerWithApplication:(XCUIApplication* _Nonnull)application;
 

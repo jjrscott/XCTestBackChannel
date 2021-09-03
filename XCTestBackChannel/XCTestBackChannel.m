@@ -48,7 +48,7 @@
     return self;
 }
 
-- (void)sentMessage:(NSString *)message {
+- (void)sendMessage:(NSString *)message {
     if (self.remoteIdentifier) {
         [NSDistributedNotificationCenter.defaultCenter postNotificationName:self.remoteIdentifier
                                                                      object:message
