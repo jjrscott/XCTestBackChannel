@@ -9,13 +9,17 @@ import UIKit
 import XCTestBackChannel
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+class AppDelegate: UIResponder, UIApplicationDelegate, XCTestBackChannelDelegate {
+    func xcTestBackChannelHandleMessage(_ message: String) {
+        UIApplication.shared.windows.first?.rootViewController?.view.backgroundColor = UIColor(named: message)
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        XCTestBackChannel.shared.sentMessage("Hello")
+        XCTestBackChannel.shared.delegate = self
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { (_) in
+            XCTestBackChannel.shared.sentMessage("Hello")
+        }
         return true
     }
 
