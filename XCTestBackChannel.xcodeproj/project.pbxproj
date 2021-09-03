@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		065C90C726E2C82200E3F4DE /* XCTestBackChannel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069E1BD926E2C4D800F0B461 /* XCTestBackChannel.framework */; };
+		065C90CD26E2C97B00E3F4DE /* XCTestBackChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 065C90CC26E2C97B00E3F4DE /* XCTestBackChannel.m */; };
+		065C90EF26E2D6B200E3F4DE /* XCTestBackChannelUIApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = 065C90ED26E2D6B200E3F4DE /* XCTestBackChannelUIApplication.h */; };
+		065C90F026E2D6B200E3F4DE /* XCTestBackChannelUIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 065C90EE26E2D6B200E3F4DE /* XCTestBackChannelUIApplication.m */; };
 		069E1BDE26E2C4D800F0B461 /* XCTestBackChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = 069E1BDC26E2C4D800F0B461 /* XCTestBackChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		069E1BEC26E2C50800F0B461 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E1BEB26E2C50800F0B461 /* AppDelegate.swift */; };
 		069E1BEE26E2C50800F0B461 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E1BED26E2C50800F0B461 /* SceneDelegate.swift */; };
@@ -36,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		065C90CC26E2C97B00E3F4DE /* XCTestBackChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTestBackChannel.m; sourceTree = "<group>"; };
+		065C90D226E2CAE900E3F4DE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		065C90ED26E2D6B200E3F4DE /* XCTestBackChannelUIApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCTestBackChannelUIApplication.h; sourceTree = "<group>"; };
+		065C90EE26E2D6B200E3F4DE /* XCTestBackChannelUIApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCTestBackChannelUIApplication.m; sourceTree = "<group>"; };
+		065C90F526E2D6C500E3F4DE /* NSDistributedNotificationCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSDistributedNotificationCenter.h; sourceTree = "<group>"; };
 		069E1BD926E2C4D800F0B461 /* XCTestBackChannel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XCTestBackChannel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		069E1BDC26E2C4D800F0B461 /* XCTestBackChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCTestBackChannel.h; sourceTree = "<group>"; };
 		069E1BDD26E2C4D800F0B461 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				065C90C726E2C82200E3F4DE /* XCTestBackChannel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		065C90C626E2C82200E3F4DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				065C90D226E2CAE900E3F4DE /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		069E1BCF26E2C4D800F0B461 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +113,7 @@
 				069E1C0126E2C50A00F0B461 /* XCTestBackChannelDemoTests */,
 				069E1C0C26E2C50A00F0B461 /* XCTestBackChannelDemoUITests */,
 				069E1BDA26E2C4D800F0B461 /* Products */,
+				065C90C626E2C82200E3F4DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				069E1BDC26E2C4D800F0B461 /* XCTestBackChannel.h */,
+				065C90CC26E2C97B00E3F4DE /* XCTestBackChannel.m */,
+				065C90ED26E2D6B200E3F4DE /* XCTestBackChannelUIApplication.h */,
+				065C90EE26E2D6B200E3F4DE /* XCTestBackChannelUIApplication.m */,
+				065C90F526E2D6C500E3F4DE /* NSDistributedNotificationCenter.h */,
 				069E1BDD26E2C4D800F0B461 /* Info.plist */,
 			);
 			path = XCTestBackChannel;
@@ -157,6 +180,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				065C90EF26E2D6B200E3F4DE /* XCTestBackChannelUIApplication.h in Headers */,
 				069E1BDE26E2C4D800F0B461 /* XCTestBackChannel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +344,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				065C90F026E2D6B200E3F4DE /* XCTestBackChannelUIApplication.m in Sources */,
+				065C90CD26E2C97B00E3F4DE /* XCTestBackChannel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +543,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jjrscott.XCTestBackChannel;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -539,6 +566,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jjrscott.XCTestBackChannel;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

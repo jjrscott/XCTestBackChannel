@@ -6,8 +6,9 @@
 //
 
 import XCTest
+import XCTestBackChannel
 
-class XCTestBackChannelDemoUITests: XCTestCase {
+class XCTestBackChannelDemoUITests: XCTestCase, XCTestBackChannelDelegate {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -25,7 +26,11 @@ class XCTestBackChannelDemoUITests: XCTestCase {
     func testExample() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
+        XCTestBackChannel.shared.delegate = self
+        XCTestBackChannel.shared.register(with: app)
         app.launch()
+        
+        sleep(10)
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -38,5 +43,9 @@ class XCTestBackChannelDemoUITests: XCTestCase {
                 XCUIApplication().launch()
             }
         }
+    }
+    
+    func xcTestBackChannelHandleMessage(_ message: String) {
+        print(message)
     }
 }
