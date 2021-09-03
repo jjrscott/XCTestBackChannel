@@ -39,6 +39,11 @@
     if (self) {
         self.localIdentifier = NSProcessInfo.processInfo.environment[UITestBackchannelAppIdentifier] ?: NSUUID.UUID.UUIDString;
         self.remoteIdentifier = NSProcessInfo.processInfo.environment[UITestBackchannelRunnerIdentifier] ?: NSUUID.UUID.UUIDString;
+        
+        [NSDistributedNotificationCenter.defaultCenter addObserver:self
+                                                          selector:@selector(handleNotification:)
+                                                              name:self.localIdentifier
+                                                            object:nil];
     }
     return self;
 }
@@ -62,20 +67,5 @@
 - (void)handleNotification:(NSNotification*)notification {
     [self.delegate XCTestBackChannelHandleMessage:notification.object];
 }
-
--(void)setDelegate:(id<XCTestBackChannelDelegate>)delegate {
-    if (_delegate) {
-        [NSDistributedNotificationCenter.defaultCenter removeObserver:self];
-    }
-    
-    if (delegate && self.localIdentifier) {
-        [NSDistributedNotificationCenter.defaultCenter addObserver:self
-                                                          selector:@selector(handleNotification:)
-                                                              name:self.localIdentifier
-                                                            object:nil];
-    }
-    _delegate = delegate;
-}
-
 
 @end
