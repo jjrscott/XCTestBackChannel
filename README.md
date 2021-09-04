@@ -1,8 +1,8 @@
-This project demonstrates how to use `NSDistributedNotificationCenter` to provide simple bidirectional messaging between your iOS app and UI tests that are controlling it.
+This project demonstrates how to use `NSDistributedNotificationCenter` to provide simple bidirectional messaging between your iOS app and UI tests that are controlling it. This mechanism has been tested in the iOS Simulator and on an iOS device connected to Xcode.
 
 You should **NOT** attempt to put this in the AppStore. Expect Apple to reject your app for the use of a private API if you do.
 
-## Usage
+### Usage
 
 To send a message from your app to your test:
 
