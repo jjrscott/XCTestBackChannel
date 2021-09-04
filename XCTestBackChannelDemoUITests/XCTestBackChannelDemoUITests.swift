@@ -54,7 +54,7 @@ class XCTestBackChannelDemoUITests: XCTestCase, XCTestBackChannelDelegate {
         }
     }
     
-    func xcTestBackChannelHandleMessage(_ message: String) {
+    func testBackChannel(handleMessage message: String) {
         print(message)
         expectation?.fulfill()
     }

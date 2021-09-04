@@ -19,7 +19,7 @@ FOUNDATION_EXPORT const unsigned char XCTestBackChannelVersionString[];
 
 @protocol XCTestBackChannelDelegate <NSObject>
 
--(void)XCTestBackChannelHandleMessage:(NSString* _Nonnull)message;
+-(void)XCTestBackChannelHandleMessage:(NSString* _Nonnull)message NS_SWIFT_NAME(testBackChannel(handleMessage:));
 
 @end
 

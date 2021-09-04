@@ -10,7 +10,7 @@ import XCTestBackChannel
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, XCTestBackChannelDelegate {
-    func xcTestBackChannelHandleMessage(_ message: String) {
+    func testBackChannel(handleMessage message: String) {
         UIApplication.shared.windows.first?.rootViewController?.view.backgroundColor = UIColor(named: message)
     }
 

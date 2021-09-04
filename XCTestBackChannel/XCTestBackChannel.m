@@ -48,6 +48,10 @@
     return self;
 }
 
++(void)initialize {
+    [self sharedBackChannel];
+}
+
 - (void)sendMessage:(NSString *)message {
     if (self.remoteIdentifier) {
         [NSDistributedNotificationCenter.defaultCenter postNotificationName:self.remoteIdentifier
