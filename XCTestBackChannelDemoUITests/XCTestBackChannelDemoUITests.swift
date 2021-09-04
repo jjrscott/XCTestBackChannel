@@ -33,7 +33,7 @@ class XCTestBackChannelDemoUITests: XCTestCase, XCTestBackChannelDelegate {
         XCTestBackChannel.shared.delegate = self
         XCTestBackChannel.shared.register(with: app)
         app.launch()
-        
+        app.buttons["Button"].tap()
         if let expectation = expectation {
             wait(for: [expectation], timeout: 10)
         }

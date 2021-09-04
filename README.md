@@ -26,3 +26,39 @@ func testBackChannel(handleMessage message: String) {
 }
 ```
 
+### Expectation example
+
+The `XCTestBackChannelDemo` target and tests use this mechanism to fulfill an explectation.
+
+In the app:
+
+```swift
+class ViewController: UIViewController {
+    @IBAction func tappedButton(_ sender: UIButton) {
+        XCTestBackChannel.shared.sendMessage("Hello")
+    }
+}
+```
+
+In the test:
+
+```swift
+var expectation : XCTestExpectation?
+
+func testExample() throws {
+	expectation = XCTestExpectation(description: "Wait for a message from the app")
+    let app = XCUIApplication()
+    XCTestBackChannel.shared.delegate = self
+    XCTestBackChannel.shared.register(with: app)
+    app.launch()
+    app.buttons["Button"].tap()
+    if let expectation = expectation {
+        wait(for: [expectation], timeout: 10)
+    }
+}
+
+func testBackChannel(handleMessage message: String) {
+    print(message)
+    expectation?.fulfill()
+}
+```
