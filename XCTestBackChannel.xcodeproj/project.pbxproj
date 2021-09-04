@@ -63,6 +63,7 @@
 		069E1C0D26E2C50A00F0B461 /* XCTestBackChannelDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestBackChannelDemoUITests.swift; sourceTree = "<group>"; };
 		069E1C0F26E2C50A00F0B461 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06C67DF826E38929003E25AA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		06C67DFD26E3C28D003E25AA /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +110,7 @@
 		069E1BCF26E2C4D800F0B461 = {
 			isa = PBXGroup;
 			children = (
+				06C67DFD26E3C28D003E25AA /* LICENSE.txt */,
 				06C67DF826E38929003E25AA /* README.md */,
 				069E1BDB26E2C4D800F0B461 /* XCTestBackChannel */,
 				069E1BEA26E2C50800F0B461 /* XCTestBackChannelDemo */,
